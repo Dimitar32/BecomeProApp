@@ -1,0 +1,75 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1560d4 0%, #07375c 100%);
+  color: #fff;
+  padding: 24px 0 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: #ffae2b;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 18px 0 12px 0;
+  color: #fff;
+}
+
+.categoryList, .trainingList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 90vw;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categoryItem, .trainingItem {
+  background: #fff;
+  color: #1560d4;
+  border-radius: 14px;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(21,96,212,0.07);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+.categoryItem:hover, .trainingItem:hover {
+  background: #ffae2b;
+  color: #07375c;
+  box-shadow: 0 4px 16px rgba(255,174,43,0.13);
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #ffae2b;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 0;
+}
+
+.videoWrapper {
+  margin-top: 18px;
+  width: 90vw;
+  max-width: 400px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(21,96,212,0.13);
+  background: #000;
+}

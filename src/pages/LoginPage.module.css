@@ -1,0 +1,228 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #07375c;
+  padding: 0; /* Remove extra padding */
+  margin: 0;  /* Remove extra margin */
+  box-sizing: border-box;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.10));
+}
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  background: #0b2e4a;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  border: 2px solid #ffae2b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input,
+.primaryButton,
+.googleButton {
+  width: 100%;
+  max-width: 270px;
+  box-sizing: border-box;
+}
+
+.input {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #ffae2b;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #07375c;
+  color: #fff;
+  outline: none;
+  transition: border 0.18s;
+}
+
+.input:focus {
+  border: 1.5px solid #fff;
+}
+
+.primaryButton {
+  padding: 0.75rem;
+  background-color: #ffae2b;
+  color: #07375c;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background 0.18s, color 0.18s;
+}
+
+.primaryButton:hover,
+.primaryButton:focus {
+  background: #fff;
+  color: #07375c;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0 1rem 0;
+  width: 100%;
+  max-width: 270px;
+}
+
+.dividerLine {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ffae2b;
+}
+
+.dividerText {
+  margin: 0 0.75rem;
+  font-size: 0.95rem;
+  color: #ffae2b;
+}
+
+.googleButton {
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1.5px solid #ffae2b;
+  border-radius: 8px;
+  background: #07375c;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  transition: background 0.18s, color 0.18s;
+}
+
+.googleButton:hover,
+.googleButton:focus {
+  background: #ffae2b;
+  color: #07375c;
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.footerText {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.link {
+  color: #ffae2b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+
+.link:hover,
+.link:focus {
+  color: #fff;
+}
+
+@media (min-width: 480px) {
+  .logo {
+    width: 130px;
+    height: 130px;
+  }
+  .card {
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  .card {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+  }
+  .input,
+  .primaryButton,
+  .googleButton,
+  .divider {
+    max-width: 95vw;
+    width: 95vw;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  .card {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+  }
+  .input,
+  .primaryButton,
+  .googleButton,
+  .divider {
+    max-width: 95vw;
+    width: 95vw;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+  }
+}

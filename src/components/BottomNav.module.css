@@ -1,0 +1,62 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(11, 46, 74, 0.97); /* тъмносин, леко прозрачен нюанс от HomePage */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 7px 0 4px 0;
+  border-top: 2px solid #ffae2b;
+  z-index: 100;
+  box-shadow: 0 -2px 16px 0 rgba(7, 55, 92, 0.10);
+  backdrop-filter: blur(2px);
+}
+
+.bottomNav a {
+  flex: 1;
+  text-align: center;
+  color: #e6eaf3;
+  text-decoration: none;
+  font-size: 0.93rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 0 0 0;
+  transition: color 0.18s;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.bottomNav a img {
+  width: 27px;
+  height: 27px;
+  margin-bottom: 2px;
+  filter: grayscale(0.3) brightness(0.93) drop-shadow(0 1px 2px #07375c22);
+  transition: filter 0.18s;
+}
+
+.bottomNav a.active,
+.bottomNav a:focus,
+.bottomNav a:hover {
+  color: #ffae2b;
+  background: rgba(255, 174, 43, 0.07);
+  border-radius: 12px;
+}
+
+.bottomNav a.active img,
+.bottomNav a:focus img,
+.bottomNav a:hover img {
+  filter: none;
+}
+
+@media (min-width: 600px) {
+  .bottomNav {
+    max-width: 430px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 18px 18px 0 0;
+  }
+}

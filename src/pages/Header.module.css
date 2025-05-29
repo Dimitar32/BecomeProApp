@@ -1,0 +1,161 @@
+.header {
+  background: #07375c;
+  color: #fff;
+  padding: 10px 0 10px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 10;
+}
+
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+  min-height: 56px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.hamburger:active,
+.hamburger:focus {
+  background: rgba(255,174,43,0.12);
+  outline: none;
+}
+
+.nav {
+  margin-top: 10px;
+  background: #07375c;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 10px 0 6px 0;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.18s, color 0.18s;
+}
+
+.navLink:hover,
+.navLink:focus {
+  background: #ffae2b;
+  color: #07375c;
+  outline: none;
+}
+
+.logoTitleBox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  transition: filter 0.18s;
+}
+
+.logo:hover,
+.logo:focus {
+  filter: drop-shadow(0 0 6px #ffae2b);
+}
+
+.logoutButton {
+  background: #e53935;         /* red */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  width: 100%;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.logoutButton:hover,
+.logoutButton:focus {
+  background: #b71c1c;         /* darker red on hover */
+  color: #fff;
+}
+
+.hamburgerIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (min-width: 600px) {
+  .headerBar {
+    min-height: 64px;
+    padding: 0 32px;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    background: #07375c;
+    box-shadow: none;
+    margin-top: 0;
+    padding: 0;
+  }
+  .navList {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+  }
+  .navItem {
+    margin-bottom: 0;
+  }
+}

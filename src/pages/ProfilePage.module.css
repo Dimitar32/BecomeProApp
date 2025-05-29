@@ -1,0 +1,138 @@
+.container {
+  min-height: 80vh;
+  background: #07375c;
+  color: #fff;
+  padding: 32px 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileCard {
+  background: #0b2e4a;
+  border: 2px solid #ffae2b;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  max-width: 370px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffae2b;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+.profileField {
+  margin-bottom: 1rem;
+  font-size: 1.08rem;
+  width: 100%;
+}
+
+.profileLabel {
+  font-weight: 600;
+  color: #ffae2b;
+}
+
+.profileValue {
+  margin-left: 6px;
+  color: #fff;
+}
+
+.successMsg {
+  color: #4caf50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.errorMsg {
+  color: #e53935;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.editForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #ffae2b;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #07375c;
+  color: #fff;
+  outline: none;
+  margin-top: 0.3rem;
+  transition: border 0.18s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border: 1.5px solid #fff;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primaryButton {
+  padding: 0.7rem 1.5rem;
+  background-color: #ffae2b;
+  color: #07375c;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.primaryButton:hover,
+.primaryButton:focus {
+  background: #fff;
+  color: #07375c;
+}
+
+.cancelButton {
+  padding: 0.7rem 1.5rem;
+  background: #e53935;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.cancelButton:hover,
+.cancelButton:focus {
+  background: #b71c1c;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .profileCard {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+}
