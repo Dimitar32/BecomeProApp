@@ -4,7 +4,7 @@ const API_URL = 'https://becomeproappservice.onrender.com/api';//process.env.REA
 
 // Get all training categories
 export async function getTrainingCategories(token) {
-  const res = await axios.get(`${API_URL}/categories`, {
+  const res = await axios.get(`${API_URL}/trainings/categories`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
