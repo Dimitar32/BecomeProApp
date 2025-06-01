@@ -57,3 +57,19 @@ export const updateCategory = async (token, category) => {
   });
   return res.data;
 };
+
+// Get only article titles and ids
+export const getArticleTitles = async (token) => {
+  const res = await axios.get(`${API_URL}/api/articles/titles`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return res.data;
+};
+
+// Get article by ID
+export const getArticleById = async (token, id) => {
+  const res = await axios.get(`${API_URL}/api/articles/${id}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return res.data;
+};

@@ -1,102 +1,132 @@
+/* Modern, clean, card-based article list with your palette */
+/* filepath: c:\Users\dimit\OneDrive\Работен плот\BecomeProWebApp\become-pro-web-app\src\pages\ArticlesPage.module.css */
 .container {
-  background: #07375c;
-  min-height: 80vh;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0648aa 0%, #07375c 100%);
   color: #fff;
-  padding: 32px 8px 0 8px;
+  padding: 0 0 80px 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 18px;
   color: #fff;
-  letter-spacing: 1px;
+  margin: 28px 0 18px 0;
+  letter-spacing: 0.5px;
   text-align: center;
+  width: 100%;
+  max-width: 430px;
 }
 
 .filterBar {
-  margin-bottom: 24px;
   width: 100%;
   max-width: 430px;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
 .select {
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 2px solid #ffae2b;
   background: #0b2e4a;
   color: #fff;
+  border: 1.5px solid #1560d4;
+  border-radius: 8px;
+  padding: 7px 13px;
   font-size: 1rem;
-  margin-left: 8px;
   outline: none;
-  transition: border 0.2s;
+  margin-left: 8px;
+  transition: border 0.18s;
 }
 
 .select:focus {
-  border: 2px solid #fff;
+  border: 1.5px solid #ffae2b;
 }
 
 .articlesList {
   width: 100%;
   max-width: 700px;
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   margin: 0;
+  padding: 0;
 }
 
 .articleCard {
-  background: #0b2e4a;
-  border: 2px solid #ffae2b;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  padding: 18px 14px;
+  background: transparent;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  transition: box-shadow 0.2s, border 0.2s;
+  border-radius: 0;
+  border-bottom: 1px solid #2260a8;
+  padding: 22px 16px 10px 16px;
+  cursor: pointer;
+  transition: background 0.14s;
+  list-style: none;
+  position: relative;
 }
 
-.articleCard:hover {
-  box-shadow: 0 4px 16px rgba(255,174,43,0.15);
-  border-color: #fff;
+.articleCard:last-child {
+  border-bottom: none;
+}
+
+.articleCard:hover,
+.articleCard:focus {
+  background: rgba(21,96,212,0.08);
 }
 
 .articleTitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0 0 6px 0;
-  color: #ffae2b;
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin: 0 0 7px 0;
+  color: #fff;
+  line-height: 1.3;
+  transition: color 0.18s;
+  word-break: break-word;
 }
 
-.articleCategory {
-  font-size: 0.98rem;
+.articleCard.featured .articleTitle,
+.articleCard:nth-child(3) .articleTitle {
   color: #ffae2b;
-  margin-bottom: 6px;
-}
-
-.articleExcerpt {
-  font-size: 1rem;
-  margin-bottom: 8px;
 }
 
 .articleDate {
-  font-size: 0.9rem;
-  color: #bbb;
+  font-size: 1.01rem;
+  color: #e6eaf3;
+  margin-bottom: 0;
+  margin-top: 2px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.articleCard.featured .articleDate,
+.articleCard:nth-child(3) .articleDate {
+  color: #ffae2b;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #ffae2b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 18px 0 0 0;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 0;
 }
 
 @media (min-width: 600px) {
   .container {
-    padding-top: 48px;
+    align-items: center;
   }
-  .title {
-    font-size: 2.2rem;
+  .articlesList {
+    max-width: 600px;
   }
-  .filterBar {
-    max-width: 700px;
+  .title, .filterBar {
+    max-width: 600px;
   }
 }

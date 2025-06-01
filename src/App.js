@@ -11,6 +11,7 @@ import Header from './pages/Header';
 import BottomNav from './components/BottomNav';
 import ProfilePage from './pages/ProfilePage';
 import TrainingsPage from './pages/TrainingsPage';
+import ArticleDetailsPage from './pages/ArticleDetailsPage';
 
 function AppContent() {
   const location = useLocation();
@@ -71,6 +72,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <TrainingsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/articles/:id"
+          element={
+            <ProtectedRoute>
+              <ArticleDetailsPage />
             </ProtectedRoute>
           }
         />

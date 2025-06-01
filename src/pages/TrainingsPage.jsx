@@ -110,7 +110,7 @@ export default function TrainingsPage() {
             <iframe
               width="100%"
               height="220"
-              src={selectedTraining.you_tub_lnk || "https://www.youtube.com/embed/4u4zNDc6awE"}
+              src={selectedTraining.you_tub_lnk}
               title="YouTube video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

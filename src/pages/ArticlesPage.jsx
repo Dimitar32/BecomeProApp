@@ -1,5 +1,6 @@
 // src/pages/ArticlesPage.jsx
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getAllArticles, getCategories, getArticlesByCategory } from '../services/articleService';
 import styles from './ArticlesPage.module.css';
 
@@ -9,7 +10,7 @@ export default function ArticlesPage() {
   const [selectedCat, setSelectedCat] = useState('all');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [openArticleId, setOpenArticleId] = useState(null);
+  const navigate = useNavigate();
 
   // Fetch categories on mount
   useEffect(() => {
@@ -17,12 +18,8 @@ export default function ArticlesPage() {
       try {
         const token = localStorage.getItem('token');
         const data = await getCategories(token);
-        if (data.success) {
-          setCategories(data.categories);
-        }
-      } catch (err) {
-        // Optionally handle category errors
-      }
+        if (data.success) setCategories(data.categories);
+      } catch {}
     };
     fetchCategories();
   }, []);
@@ -45,7 +42,7 @@ export default function ArticlesPage() {
         } else {
           setError(data.message || 'Failed to load articles.');
         }
-      } catch (err) {
+      } catch {
         setError('Error loading articles.');
       } finally {
         setLoading(false);
@@ -56,11 +53,6 @@ export default function ArticlesPage() {
 
   const handleCategoryChange = (e) => {
     setSelectedCat(e.target.value);
-    setOpenArticleId(null);
-  };
-
-  const handleArticleClick = (id) => {
-    setOpenArticleId(openArticleId === id ? null : id);
   };
 
   if (loading) return <div className={styles.container}>Loading articles...</div>;
@@ -87,23 +79,25 @@ export default function ArticlesPage() {
         <p>Няма намерени статии.</p>
       ) : (
         <ul className={styles.articlesList}>
-          {articles.map((art) => (
+          {articles.map((art, idx) => (
             <li
               key={art.id}
-              className={styles.articleCard}
-              style={{ cursor: 'pointer' }}
-              onClick={() => handleArticleClick(art.id)}
+              className={`${styles.articleCard} ${idx === 2 ? styles.featured : ''}`}
+              onClick={() => navigate(`/articles/${art.id}`)}
             >
               <h3 className={styles.articleTitle}>{art.ttl}</h3>
-              {openArticleId === art.id && (
-                <div>
-                  <div className={styles.articleCategory}>
-                    {art.category || '-'}
-                  </div>
-                  <div className={styles.articleExcerpt}>{art.exc}</div>
-                  <div className={styles.articleDate}>Създадена: {art.cre_dat}</div>
-                </div>
-              )}
+              <div className={styles.articleDate}>
+                {new Date(art.cre_dat).toLocaleDateString('bg-BG', {
+                  day: '2-digit',
+                  month: 'long',
+                  year: 'numeric'
+                })}{" | "}
+                {new Date(art.cre_dat).toLocaleTimeString('bg-BG', {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: false
+                })}
+              </div>
             </li>
           ))}
         </ul>
