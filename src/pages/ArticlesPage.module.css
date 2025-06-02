@@ -31,6 +31,10 @@
   gap: 10px;
 }
 
+.filterBar label {
+  margin-left: 18px;
+}
+
 .select {
   background: #0b2e4a;
   color: #fff;
