@@ -54,6 +54,11 @@ export default function ArticleDetailsPage() {
         ← Назад към статиите
       </button>
       <h1 className={styles.title}>{article.ttl}</h1>
+      <div className={styles.articleExcerpt}>{article.exc}</div>
+      <div
+        className={styles.articleText}
+        dangerouslySetInnerHTML={{ __html: article.txt }}
+      ></div>
       <div className={styles.articleDate}>
         Създадена: {new Date(article.cre_dat).toLocaleDateString('bg-BG', {
           day: '2-digit',
@@ -66,11 +71,6 @@ export default function ArticleDetailsPage() {
           hour12: false
         })}
       </div>
-      <div className={styles.articleExcerpt}>{article.exc}</div>
-      <div
-        className={styles.articleText}
-        dangerouslySetInnerHTML={{ __html: article.txt }}
-      ></div>
     </div>
   );
 }
