@@ -55,7 +55,7 @@ export default function ArticlesPage() {
     setSelectedCat(e.target.value);
   };
 
-  if (loading) return <div className={styles.container}>Loading articles...</div>;
+  if (loading) return   <div className={styles.loaderWrapper}><span className={styles.loader}></span></div>;
   if (error) return <div className={styles.container}>{error}</div>;
 
   return (

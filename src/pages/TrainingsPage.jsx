@@ -68,7 +68,12 @@ export default function TrainingsPage() {
     <div className={styles.container}>
       <h1 className={styles.title}>Тренировки</h1>
       {error && <div className={styles.errorMsg}>{error}</div>}
-      {loading && <div className={styles.loadingMsg}>Зареждане...</div>}
+      {/* {loading && <div className={styles.loadingMsg}>Зареждане...</div>} */}
+      {loading && (
+        <div className={styles.loaderWrapper}>
+          <span className={styles.loader}></span>
+        </div>
+      )}
 
       {!selectedCategory && !loading && (
         <ul className={styles.categoryList}>

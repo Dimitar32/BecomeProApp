@@ -2,23 +2,27 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 import googleIcon from '../assets/google-icon.png';
-import logo from '../assets/BecomeProFootball.png'; // Пътят към вашето лого
+import logo from '../assets/BecomeProFootball.png';
 import { login } from '../services/authService';
 
 export default function LoginPage() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
+    setLoading(true);
     try {
       const { token } = await login(userName, password);
       localStorage.setItem('token', token);
-      navigate('/');  // след успешен login
+      navigate('/');
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || 'Login failed');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,8 +50,8 @@ export default function LoginPage() {
             onChange={e => setPassword(e.target.value)}
             required
           />
-          <button type="submit" className={styles.primaryButton}>
-            Sign In
+          <button type="submit" className={styles.primaryButton} disabled={loading}>
+            {loading ? <span className={styles.loader}></span> : 'Sign In'}
           </button>
         </form>
 
@@ -57,7 +61,6 @@ export default function LoginPage() {
           <span className={styles.dividerLine} />
         </div>
 
-        {/* Google OAuth ще е накрая */}
         <button className={styles.googleButton} disabled>
           <img src={googleIcon} alt="Google icon" className={styles.googleIcon} />
           <span>Sign in with Google</span>
