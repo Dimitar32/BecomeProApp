@@ -5,7 +5,7 @@ import homeIcon from '../assets/BecomeProFootball.png';
 import trainingIcon from '../assets/train-icon.png';
 import nutritionIcon from '../assets/nutr-icon.png';
 import articlesIcon from '../assets/article-icon.png';
-import profileIcon from '../assets/profile-icon.png';
+import fitnessIcon from '../assets/fitness-icon.png';
 
 export default function BottomNav() {
   return (
@@ -26,9 +26,9 @@ export default function BottomNav() {
         <img src={articlesIcon} alt="Articles" />
         <span>Статии</span>
       </NavLink>
-      <NavLink to="/profile" className={({ isActive }) => isActive ? styles.active : ''}>
-        <img src={profileIcon} alt="Profile" />
-        <span>Профил</span>
+      <NavLink to="/fitness" className={({ isActive }) => isActive ? styles.active : ''}>
+        <img src={fitnessIcon} alt="Fitness" />
+        <span>Фитнес</span>
       </NavLink>
     </nav>
   );
